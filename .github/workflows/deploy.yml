@@ -3,25 +3,25 @@ name: Deploy HTML ke GitHub Pages
 on:
   push:
     branches:
-      - main  # workflow jalan tiap ada push ke main
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout kode
+      # 1️⃣ Checkout kode
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Configure Pages site otomatis
+      # 2️⃣ Configure Pages site otomatis
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      # 3. Deploy HTML ke GitHub Pages
+      # 3️⃣ Deploy HTML ke GitHub Pages
       - name: Deploy ke GitHub Pages
-        uses: peaceiris/actions-gh-pages@v7
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./      # folder yang berisi index.html
-          commit_message: "Deploy update halaman HTML dari workflow"  # custom commit message
+          publish_dir: ./
+          commit_message: "Deploy update halaman HTML dari workflow"
