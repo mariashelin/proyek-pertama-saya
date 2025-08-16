@@ -1,34 +1,27 @@
 name: Deploy HTML ke GitHub Pages
 
-# Workflow dijalankan saat ada push ke branch main
 on:
   push:
     branches:
-      - main
+      - main  # workflow jalan tiap ada push ke main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout kode dari repo
-      - name: Checkout Repository
+      # 1. Checkout kode
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Setup Node.js (opsional, kalau cuma HTML murni bisa dilewati)
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '18'
+      # 2. Configure Pages site otomatis
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
 
-      # 3. Build project (opsional, kalau cuma HTML statis, cukup copy file)
-      # - name: Build Project
-      #   run: |
-      #     echo "Tidak perlu build untuk HTML statis"
-
-      # 4. Deploy ke GitHub Pages
+      # 3. Deploy HTML ke GitHub Pages
       - name: Deploy ke GitHub Pages
         uses: peaceiris/actions-gh-pages@v7
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./       # direktori yang akan di-publish, ./ karena index.html ada di root
+          publish_dir: ./      # folder yang berisi index.html
+          commit_message: "Deploy update halaman HTML dari workflow"  # custom commit message
