@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Sederhana</title>
+    <style>
+        /* Mengatur font dasar dan latar belakang halaman */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Wadah utama untuk konten di tengah halaman */
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Styling untuk judul utama */
+        h1 {
+            color: #1c1e21;
+            margin-bottom: 10px;
+        }
+
+        /* Styling untuk paragraf deskripsi */
+        p {
+            color: #606770;
+            margin-bottom: 25px;
+        }
+
+        /* Styling untuk input field */
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            box-sizing: border-box; /* Agar padding tidak menambah lebar elemen */
+            font-size: 16px;
+        }
+
+        /* Styling untuk tombol submit */
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #007bff; /* Warna biru primer */
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        /* Efek hover pada tombol */
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Dapatkan E-book Gratis!</h1>
+        <p>Masukkan nama dan email Anda di bawah ini untuk menerima e-book eksklusif kami langsung ke inbox Anda.</p>
+        
+        <form action="#" method="post">
+            <input type="text" name="nama" placeholder="Nama Lengkap Anda" required>
+            <input type="email" name="email" placeholder="Alamat Email Anda" required>
+            <button type="submit">Kirim Sekarang!</button>
+        </form>
+        </div>
+
+</body>
+</html>

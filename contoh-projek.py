@@ -4,4 +4,3 @@ print("udah selesai capek banget")
 print("1234567890")
 print("eh besok ada tugas lagi")
 
-
